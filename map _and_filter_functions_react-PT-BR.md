@@ -34,7 +34,6 @@ Existem diversos tipos de objetos json que retornam das APIS:
 
 Por volta de todo o objeto/array json:
 
-`{...}`
 
 Interno:
 
