@@ -1,5 +1,4 @@
-
-Ao final desse artigo seremos capazes de entender e aplicar conhecimento relacionado: 
+Ao final desse artigo seremos capazes de entender e aplicar conhecimento relacionado:
 
 1-Receber dados (objetos Json) uma API.
 
@@ -31,19 +30,15 @@ O método filter() cria um novo array com todos os elementos que passaram no tes
 
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filtro
 
-
-
 Existem diversos tipos de objetos json que retornam das APIS:
 
 Por volta de todo o objeto/array json:
 
-``` {...} ```
-
+`{...}`
 
 Interno:
 
-
-```
+```javascript
 {
   "AALR3": {
     "Cresc.5a": "0,48",
@@ -114,58 +109,54 @@ Interno:
 Ele não é o único tipo de retorno Json de APIS,
 elas obviamente podem ter arrays de objetos em outros formatos,como:
 
-```
-
-["Go to the store",
- "Wash the dishes",
- "Learn some code"]
-
+```javascript
+["Go to the store", "Wash the dishes", "Learn some code"];
 ```
 
 E outros:
 
-```
+```javascript
 [
   {
-    "userId": 1,
-    "id": 1,
-    "title": "delectus aut autem",
-    "completed": false
+    userId: 1,
+    id: 1,
+    title: "delectus aut autem",
+    completed: false,
   },
   {
-    "userId": 1,
-    "id": 2,
-    "title": "quis ut nam facilis et officia qui",
-    "completed": false
+    userId: 1,
+    id: 2,
+    title: "quis ut nam facilis et officia qui",
+    completed: false,
   },
   {
-    "userId": 1,
-    "id": 3,
-    "title": "fugiat veniam minus",
-    "completed": false
+    userId: 1,
+    id: 3,
+    title: "fugiat veniam minus",
+    completed: false,
   },
   {
-    "userId": 1,
-    "id": 4,
-    "title": "et porro tempora",
-    "completed": true
+    userId: 1,
+    id: 4,
+    title: "et porro tempora",
+    completed: true,
   },
   {
-    "userId": 1,
-    "id": 5,
-    "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
-    "completed": false
+    userId: 1,
+    id: 5,
+    title: "laboriosam mollitia et enim quasi adipisci quia provident illum",
+    completed: false,
   },
   {
-    "userId": 1,
-    "id": 6,
-    "title": "qui ullam ratione quibusdam voluptatem quia omnis",
-    "completed": false
+    userId: 1,
+    id: 6,
+    title: "qui ullam ratione quibusdam voluptatem quia omnis",
+    completed: false,
   },
-]
+];
+```
 
-```
-```
+```javascript
 {
     "items": [
         {
@@ -237,7 +228,7 @@ E outros:
 
 E outra:
 
-```
+```javascript
 {
 "Global Quote": {"01. symbol":"TSLA","02. open":"777.8700","03. high":"789.7500","04. low":"770.7700","05. price":"771.8426","06. volume":"6995867","07. latest trading day":"2020-02-12","08. previous close":"774.3800","09. change":"-2.5374","10. change percent":"-0.3277%"}
 }
@@ -283,18 +274,14 @@ Analisando e aplicando as funções e regras corretas,conseguiremos imprimir,bus
 Algumas funções JS que podem ser usados no ReactJS:
 
 Object.values:
-O método Object.keys() retorna um array de propriedades enumeraveis de um determinado objeto, na mesma ordem em que é fornecida por um laço for...in (a diferença é que um laço for-in  enumera propriedades que estejam na cadeia de protótipos).
+O método Object.keys() retorna um array de propriedades enumeraveis de um determinado objeto, na mesma ordem em que é fornecida por um laço for...in (a diferença é que um laço for-in enumera propriedades que estejam na cadeia de protótipos).
 
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/values
 
-
 Object.keys:
-O método Object.keys() retorna um array de propriedades enumeráveis de um determinado objeto, na mesma ordem em que é fornecida por um laço for...in (a diferença é que um laço for-in  enumera propriedades que estejam na cadeia de protótipos).
+O método Object.keys() retorna um array de propriedades enumeráveis de um determinado objeto, na mesma ordem em que é fornecida por um laço for...in (a diferença é que um laço for-in enumera propriedades que estejam na cadeia de protótipos).
 
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
-
- 
-
 
 Conceitos e montagem do ciclo de vida no ReactJS.
 
@@ -304,14 +291,12 @@ Depois iremos renderizar os dados na tela.
 
 É muito importante sabermos o id ou indexador do item que queremos buscar,assim será mais fácil escolher qual tipo de sintaxe usar,mas tudo estará em volta dos conceitos de:
 
-
 ReactJS código fonte:
 
 ```javascript
 class App extends React.Component {
   constructor(props) {
-		
-	/*	 
+    /*	 
 	
 	  state = {
     stockdata: [],
@@ -319,17 +304,16 @@ class App extends React.Component {
   };    
 	
 	*/
-		
+
     super(props);
     this.state = {
       list: ["Go to the store", "Wash the dishes", "Learn some code"],
-			 
-			 stockdata: [],
-       namestock: []
-			
-			 //  stockdata: Object.values(res),
-       //  namestock: Object.keys(res)
-			 
+
+      stockdata: [],
+      namestock: [],
+
+      //  stockdata: Object.values(res),
+      //  namestock: Object.keys(res)
     };
     this.addItem = this.addItem.bind(this);
     this.removeItem = this.removeItem.bind(this);
@@ -350,7 +334,7 @@ class App extends React.Component {
       list.push(newItem.value);
       // Then we use that to set the state for list
       this.setState({
-        list: list
+        list: list,
       });
       // Finally, we need to reset the form
       newItem.classList.remove("is-danger");
@@ -374,7 +358,7 @@ class App extends React.Component {
     });
     // Set state to list
     this.setState({
-      list: list
+      list: list,
     });
   }
 
@@ -383,7 +367,7 @@ class App extends React.Component {
       <div className="content">
         <div className="container">
           <section className="section">
-						<List items={this.state.list} delete={this.removeItem} />
+            <List items={this.state.list} delete={this.removeItem} />
           </section>
           <hr />
           <section className="section">
@@ -406,18 +390,16 @@ class App extends React.Component {
 }
 
 class List extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			filtered: []
-		};
-		this.handleChange = this.handleChange.bind(this);
-	}
-	
-	componentDidMount() {
-		
-		
-		/*
+  constructor(props) {
+    super(props);
+    this.state = {
+      filtered: [],
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentDidMount() {
+    /*
 		
 		fetch("http://localhost:5000")
       .then(res => res.json())
@@ -429,101 +411,81 @@ class List extends React.Component {
         //console.log(this.state.stockdata);
       });
 			
-		*/	
-		
-		
-		
+		*/
+
     this.setState({
       filtered: this.props.items,
-			//filtered: this.props.stockdata,
+      //filtered: this.props.stockdata,
       //filtered: this.props.namestock
-			
     });
-		
-		
-		
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      filtered: nextProps.items
+      filtered: nextProps.items,
     });
   }
-	
-	handleChange(e) {
-		// Variable to hold the original version of the list
+
+  handleChange(e) {
+    // Variable to hold the original version of the list
     let currentList = [];
-		// Variable to hold the filtered list before putting into state
+    // Variable to hold the filtered list before putting into state
     let newList = [];
-		
-		// If the search bar isn't empty
+
+    // If the search bar isn't empty
     if (e.target.value !== "") {
-			// Assign the original list to currentList
+      // Assign the original list to currentList
       currentList = this.props.items;
-			
-			// Use .filter() to determine which items should be displayed
-			// based on the search terms
-      newList = currentList.filter(item => {
-				// change current item to lowercase
+
+      // Use .filter() to determine which items should be displayed
+      // based on the search terms
+      newList = currentList.filter((item) => {
+        // change current item to lowercase
         const lc = item.toLowerCase();
-				// change search term to lowercase
+        // change search term to lowercase
         const filter = e.target.value.toLowerCase();
-				// check to see if the current list item includes the search term
-				// If it does, it will be added to newList. Using lowercase eliminates
-				// issues with capitalization in search terms and search content
+        // check to see if the current list item includes the search term
+        // If it does, it will be added to newList. Using lowercase eliminates
+        // issues with capitalization in search terms and search content
         return lc.includes(filter);
       });
     } else {
-			// If the search bar is empty, set newList to original task list
+      // If the search bar is empty, set newList to original task list
       newList = this.props.items;
     }
-		// Set the filtered state based on what our rules added to newList
+    // Set the filtered state based on what our rules added to newList
     this.setState({
-      filtered: newList
+      filtered: newList,
     });
   }
-	
-	render() {
-		return (
-			<div>
-				<input type="text" className="input" onChange={this.handleChange} placeholder="Search..." />
-					<ul>
-						{this.state.filtered.map(item => (
-							<li key={item}>
-								{item} &nbsp;
-								<span
-									className="delete"
-									onClick={() => this.props.delete(item)}
-									/>
-							</li>
-						))}
-					</ul>
-				</div>
-		)
-	}
+
+  render() {
+    return (
+      <div>
+        <input
+          type="text"
+          className="input"
+          onChange={this.handleChange}
+          placeholder="Search..."
+        />
+        <ul>
+          {this.state.filtered.map((item) => (
+            <li key={item}>
+              {item} &nbsp;
+              <span
+                className="delete"
+                onClick={() => this.props.delete(item)}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
 }
 
 ReactDOM.render(<App />, document.getElementById("app"));
-
 ```
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Exemplos:
 
@@ -532,9 +494,6 @@ Exemplos CodePen-CodeSandBox:
 https://codepen.io/Guillerbr/pen/oNjgpod
 
 https://codesandbox.io/s/filter-react-search-function-api-data-gxtqk
-
-
-
 
 Fontes:
 
@@ -557,6 +516,3 @@ https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/values
-
-
-
