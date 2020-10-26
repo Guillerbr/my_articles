@@ -2,3 +2,5 @@
 
 Docker é uma ótima ferramenta para automatizar a implantação de aplicativos Linux dentro de contêineres de software, mas para tirar o máximo proveito de seu potencial, cada componente de um aplicativo deve ser executado em seu próprio contêiner individual. Para aplicativos complexos com muitos componentes, orquestrar todos os contêineres para inicializar, comunicar e encerrar juntos pode rapidamente se tornar difícil.
 
+
+``` sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose ```
