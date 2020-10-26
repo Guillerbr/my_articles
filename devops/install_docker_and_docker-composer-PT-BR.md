@@ -4,7 +4,8 @@
 
 ### Etapa 1 - Instalando o Docker Compose
 
-```bash sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose ```
+```console
+ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose ```
 
 A seguir, definiremos as permissões:
 
