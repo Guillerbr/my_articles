@@ -2,7 +2,7 @@
 
 **Docker** é uma ótima ferramenta para **automatizar** a implantação de aplicativos **Linux** dentro de **contêineres de software**, mas para tirar o máximo proveito de seu potencial, cada componente de um aplicativo deve ser executado em seu próprio contêiner individual. Para aplicativos complexos com muitos componentes, orquestrar todos os contêineres para inicializar, comunicar e encerrar juntos pode rapidamente se tornar difícil.
 
-### Etapa 1 - Instalando o Docker
+## Etapa 1 - Instalando o Docker
 
 O pacote de instalação do Docker disponível no repositório oficial do Ubuntu pode não ser a versão mais recente. Para garantir que teremos a última versão, vamos instalar o Docker a partir do repositório oficial do projeto. Para fazer isto, vamos adicionar uma nova fonte de pacotes, adicionar a chave GPG do Docker para garantir que os downloads são válidos, e então instalar os pacotes.
 
