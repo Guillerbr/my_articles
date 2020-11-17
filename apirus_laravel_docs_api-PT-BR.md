@@ -16,7 +16,6 @@ Altere o nome do arquivo .env.exemple para .env
 ```cp .env.example .env```
 
 
-
 No arquivo .env altere as variáveis de ambientes.
 
 ``` 
