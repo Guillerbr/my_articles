@@ -116,8 +116,178 @@ Agora, instale o pacote para adicionar o repositório:
 sudo dpkg -i zabbix-release_5.0-1+bionic_all.deb
 ```
 
+Atualize os pacotes:
+
+```
+sudo apt-get update
+```
+
+Instalação do **banco de dados** **Mysql**
+
+```
+sudo apt-get install mysql-server
+```
+
+Terminamos de instalar o banco de dados **Mysql**. Agora, vamos instalar o pacote do **Zabbix Server**.
+Comando:
+
+```
+sudo apt-get install zabbix-server-mysql
+```
+*Digite Y para as configurações*
+
+Criando o banco de dados do Zabbix, logue na console do mysql primeiro. Por padrão, a senha do mysql do root vem em branco. 
+
+```
+sudo mysql -u root -p 
+```
+*Digite a senha do seu user root do mysql*
+
+Estamos logados na console do mysql.
+Vamos criar a Database Zabbix. Digite os comandos abaixo:
+
+```
+create database zabbix character set utf8 collate utf8_bin;
+```
+Agora vamos alterar os privilégios do usuário zabbix e do banco de dados zabbix.
+Com o comando:
+
+```
+grant all privileges on zabbix.* to zabbix@localhost identified by 'zabbix';
+```
+
+Vamos importar as tabelas agora, entre no diretório abaixo, digitando o comando:
+
+```
+cd /usr/share/doc/zabbix-server-mysq
+```
+
+Dentro desse diretório, digite o seguinte comando:
+
+```
+zcat create.sql.gz | mysql -uroot zabbix
+```
+
+*A importação pode demorar alguns minutos, aguarde...*
+
+Em seguida, **editaremos** o arquivo do **Zabbix Server**. Por padrão, precisaremos editar somente o **DBPassword**.
+
+Você tem que descomentar o parâmetro **DBPassword** removendo o “#” da frente e adicionar a senha **“zabbix”**, porque foi a que criamos, na parte de banco de dados.
+
+Entre no arquivo desse diretório:
+
+```
+nano /etc/zabbix/zabbix_server.conf
+```
+
+Agora, instalaremos o *PHP*, necessário para o funcionamento correto da parte **WEB do Zabbix**.
+
+```
+sudo apt-get install php7.2 php7.2-mysql php7.2-bcmath php7.2-gd php7.2-mbstring php7.2-xml php7.2-gettext php7.2-ldap
+```
+*Digite S ou Y para configurar corretamente.*
+
+Agora precisamos editar o arquivo **php.ini**.Alterar alguns parâmetros, deixando-os conforme os valores abaixo:
+
+No caminho:
+
+```
+nano /etc/php/7.2/apache2/php.ini
+```
+
+Altere conforme abaixo:
+
+```
+memory_limit = 128MB
+post_max_size = 16M
+upload_max_filesize = 2M
+max_execution_time = 300
+max_input_time = 300
+date.timezone = America/Sao_Paulo
+```
+
+Está quase no final. Vamos instalar o pacote do **Frontend do Zabbix:**
+
+Comando:
+
+```
+sudo apt install zabbix-frontend-php zabbix-apache-conf zabbix-agent2
+```
+*Digite S ou Y para configurar*
+
+Reiniciar Apache Server:
+
+```
+sudo service apache2 restart
+```
+
+**Ativar Zabbix Server no boot:**
+
+```
+sudo systemctl enable zabbix-server
+```
+
+**Iniciando Zabbix Server**
+
+```
+sudo service zabbix-server start
+```
+
+Confira o log para saber se está tudo certo até aqui. Segue comando:
+
+```
+sudo tail -f /var/log/zabbix/zabbix_server.log
+```
+
+Abra o navegador de sua preferência e acesse **Wizard Frontend** para finalizar a instalação.
+
+*localhost/zabbix*
+
+Se tudo estiver certo irá aparecer a página do cliente *Zabbix*
+
+Clique em *Next step*.
+
+Verifique se todos os utilitários foram instalados com sucesso.
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/qwngubsyjff113t2upkd.png)
+
+Clique em *Next step*.
+
+**Configure DB connection**
+
+*Digite a senha que usamos para nosso banco de dados **zabbix***.
+
+*A senha é: **zabbix***
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/qc3v55koko0c2i8i4z73.png)
 
 
+Digite um nome qualquer para seu projeto *Zabix*
+
+Agora vamos para a instalação final:
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/7pox9emxmo1wre87k6qv.png)
+
+Clique em *Next step*.
+
+**Instalado com Sucesso!**
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/yo9g978ebc0zpul3kep7.png)
+
+**Vamos logar com o usuário e senha padrão do Zabbix**
+
+user: Admin
+pass: zabbix
+
+## PRONTO!
+
+Se tudo estiver instalado corretamente, você chegará nessa tela após o login.
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/ovl48smmow9z1tffvgie.png)
+
+
+
+Digite os dados de acesso ao painel:
 
 
 
