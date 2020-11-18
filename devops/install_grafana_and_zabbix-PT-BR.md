@@ -1,9 +1,13 @@
 Primeiramente precisamos que você tenha conhecimentos em:
-**Linux**, **Grafana**, **Zabbix**.
+**Linux Ubuntu**, **Grafana**, **Zabbix**.
 
 O **Grafana** é um software livre que permite a visualização de formato de dados métricos. Ele permite criar painéis e gráficos a partir de várias fontes, e neste tutorial vamos aprender a integrar com o **Zabbix**.
 
+O **Zabbix** é uma ferramenta de software de monitoramento de código aberto para diversos componentes de TI, incluindo redes, servidores, máquinas virtuais e serviços em nuvem. O Zabbix fornece métricas de monitoramento, entre outras, utilização da rede, carga da CPU e consumo de espaço em disco
+
 Usaremos uma máquina **Ubuntu 18.04**.
+
+# Vamos Começar!
 
 ## Instalação do Grafana
 
@@ -95,6 +99,29 @@ Isso confirma que o systemd criou os links simbólicos necessários para iniciar
 O Grafana agora está instalado e pronto para uso.
 
 
+## Instalação do Zabbix
+
+*Usarei a versão 5.0 TLS do Zabbix*
+
+Vamos iniciar a instalação. Primeiro, faça o download do pacote que contém o repositório **Zabbix**.
+Veja o comando abaixo:
+
+```
+sudo wget https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.0-1%2Bbionic_all.deb
+```
+
+Agora, instale o pacote para adicionar o repositório:
+
+```
+sudo dpkg -i zabbix-release_5.0-1+bionic_all.deb
+```
+
+
+
+
+
+
+
 
 Referências:
 
@@ -104,3 +131,8 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-grafa
 
 https://medium.com/zabbix-brasil/integrando-zabbix-e-grafana-d46de4d1526d
 
+https://techexpert.tips/pt-br/zabbix-pt-br/zabbix-5-instalacao-no-ubuntu-linux/
+
+https://noto-site.s3.us-east-2.amazonaws.com/EBOOK/Ebook+2+Zabbix+5.0.+vers%C3%A3o+1.pdf?utm_source=leadlovers&utm_medium=email&utm_campaign=%5BFunil%20Inicial%5D%20&utm_content=NOTO%20-%20Bnus%20Zabbix
+
+https://www.youtube.com/watch?v=pJIHeG0kJNM&feature=emb_title
