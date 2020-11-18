@@ -28,4 +28,4 @@ Obrigado!
 ## Contribuições
 
 Qualquer pessoa pode criar um novo tutorial e ajuda a manter os já criados atualizados.
-Envie um **PR** e ajude a melhorar esse projeto!
+Envie um **PR** e ajude a melhorar esse projeto!	
