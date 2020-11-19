@@ -1,9 +1,11 @@
+*Ambiente de testes e experimentação*
+
 Primeiramente precisamos que você tenha conhecimentos em:
-**Linux Ubuntu**, **Grafana**, **Zabbix**.
+**Linux Ubuntu**, **Grafana**, **Zabbix**, **PHP**, **MYSQl**.
 
-O **Grafana** é um software livre que permite a visualização de formato de dados métricos. Ele permite criar painéis e gráficos a partir de várias fontes, e neste tutorial vamos aprender a integrar com o **Zabbix**.
+O **Grafana** é um *software livre* que permite a criação de *gráficos e visualização de formato de dados métricos*. Ele permite criar *painéis e gráficos* a partir de várias fontes, e neste tutorial vamos aprender a integrar com o **Zabbix**.
 
-O **Zabbix** é uma ferramenta de software de monitoramento de código aberto para diversos componentes de TI, incluindo redes, servidores, máquinas virtuais e serviços em nuvem. O Zabbix fornece métricas de monitoramento, entre outras, utilização da rede, carga da CPU e consumo de espaço em disco
+O **Zabbix** é um *software livre* de *monitoramento para diversos componentes de TI, incluindo redes, servidores, máquinas virtuais e serviços em nuvem*. O **Zabbix** fornece *métricas de monitoramento*, entre outras, utilização da rede, carga da CPU e consumo de espaço em disco
 
 Usaremos uma máquina **Ubuntu 18.04**.
 
@@ -287,13 +289,80 @@ Se tudo estiver instalado corretamente, você chegará nessa tela após o login.
 
 
 
-Digite os dados de acesso ao painel:
+
+# Integração
+
+## Instalando o plugin do *Zabbix* no *Grafana*
+
+O plugin pode ser instalado através de um utilitário de linha de comando do *Grafana* chamado **grafana-cli**, usando os comandos abaixo:
+
+```
+grafana-cli plugins install alexanderzobnin-zabbix-app
+systemctl restart grafana-server
+```
+**Em versões mais recentes Grafana 7+ e Zabbix plugin 4+ é necessário incluir o parâmetro abaixo no arquivo de configuração grafana.ini**. 
+Abaixo da sessão [plugins], atenção para o nome que deve terminar com **datasource**.
+
+```
+[plugins]
+allow_loading_unsigned_plugins = alexanderzobnin-zabbix-datasource
+```
+
+Posteriormente reiniciando o serviço do Grafana, após a instalação é necessário habilitar o plugin na interface do Grafana, como na imagem abaixo.
+
+Dentro do painel do Grafana.Em **plugins**:
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/a578psfj4f3dnhse0e1l.png)
+
+Digite *zabbix* na procura de *plugins*.
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/8vorary49pmlxsdth7l5.png)
+
+### Selecione, Habilite, Instale e Configure.
+
+**Configurando o Datasource**
+
+Ao finalizar o processo de instalação do **plugin**, estará disponível a opção de criar datasource do tipo Zabbix. 
+No Grafana os datasources são separados essa flexibilidade permite criar orgs separadas por clientes com datasources independentes.
+
+No painel do Grafana em *Data Sources*
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/osgazwcqfz287yrb7n7q.png)
+
+*Selecione o zabbix*
+
+### Configuração
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/wiixvlx95shi4cpdesyc.png)
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/kflkf9ebt9j98bylukop.png)
+
+Nessa página de configuração, devemos informar os dados do usuário do *zabbix* criado nas etapas anteriores.
+O usuário é *Admin* e a senha é *zabbix*.
+
+**Name**: Defina um nome para esse datasource
+
+**URL**: A url que responde pela API do Zabbix.
+
+**Access**: O tipo de acesso que será realizado, Server indica que as requisições serão realizadas pelo backend do Grafana, partindo do Grafana Server, browser as requisições são realizadas a partir do navegador do usuário. Vale ressaltar que se escolhida a opção browser, o cliente também necessita ter acesso a interface web do Zabbix, uma vez que as requisições irão partir diretamente do cliente para o servidor Zabbix.
+
+**Trends**: Selecione se quiser que o plugin também utilize dados armazenados na tabela trends.
+
+**After**: O período que o plugin irá considerar para buscar da tabela trends, ex: se configurado para 4d , quando selecionado um intervalo de tempo maior do que 4 dias os dados serão recuperados da tabela trends.
+
+**Range**: O intervalo de tempo no qual o plugin deverá buscar os dados da tabela trends, ex: se configurado para 3d , quando o intervalo selecionado for maior que 3 dias, os dado serão recuperados da tabela trends, mesmo que sejam dados anteriores a 4 dias configurado no passo anterior.
+
+Essas são as principais configurações para ter uma integração funcional, para outras configurações pode ser consultada a documentação do plugin em: https://alexanderzobnin.github.io/grafana-zabbix/configuration/
+
+**Salve e Teste**
+
+**Se tudo der certo você receberá um status de ok, informando a conexão bem sucedida, em verde**
+
+# Criação dos painéis de dashboard
 
 
 
-
-
-Referências:
+## Fontes de Referência:
 
 https://alexanderzobnin.github.io/grafana-zabbix/
 
@@ -303,6 +372,14 @@ https://medium.com/zabbix-brasil/integrando-zabbix-e-grafana-d46de4d1526d
 
 https://techexpert.tips/pt-br/zabbix-pt-br/zabbix-5-instalacao-no-ubuntu-linux/
 
+https://blog.remontti.com.br/4014
+
+Doc Instalação Zabbix-Ubuntu:
+
 https://noto-site.s3.us-east-2.amazonaws.com/EBOOK/Ebook+2+Zabbix+5.0.+vers%C3%A3o+1.pdf?utm_source=leadlovers&utm_medium=email&utm_campaign=%5BFunil%20Inicial%5D%20&utm_content=NOTO%20-%20Bnus%20Zabbix
 
+Videos:
+
 https://www.youtube.com/watch?v=pJIHeG0kJNM&feature=emb_title
+
+https://www.youtube.com/watch?v=eUh3jQ3n9Wk
