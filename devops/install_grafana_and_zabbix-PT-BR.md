@@ -358,7 +358,10 @@ Essas são as principais configurações para ter uma integração funcional, pa
 
 **Se tudo der certo você receberá um status de ok, informando a conexão bem sucedida, em verde**
 
-# Criação dos painéis de dashboard
+# Criação dos painéis de dashboard Grafana
+
+Agora é preciso criar os painéis de dashboard do grafana e configurar com o **zabbix server**.
+
 
 
 
