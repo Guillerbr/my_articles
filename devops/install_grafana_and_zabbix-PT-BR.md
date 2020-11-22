@@ -360,7 +360,9 @@ Essas são as principais configurações para ter uma integração funcional, pa
 
 # Criação dos painéis de dashboard Grafana
 
-Agora é preciso criar os painéis de dashboard do grafana e configurar com o **zabbix server**.
+Agora é preciso criar os painéis de dashboard do **Grafana** e configurar com o **Zabbix Server**.
+
+
 
 
 
