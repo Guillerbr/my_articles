@@ -5,7 +5,7 @@ Primeiramente precisamos que você tenha conhecimentos em:
 
 O **Grafana** é um *software livre* que permite a criação de *gráficos e visualização de formato de dados métricos*. Ele permite criar *painéis e gráficos* a partir de várias fontes, e neste tutorial vamos aprender a integrar com o **Zabbix**.
 
-O **Zabbix** é um *software livre* de *monitoramento para diversos componentes de TI, incluindo redes, servidores, máquinas virtuais e serviços em nuvem*. O **Zabbix** fornece *métricas de monitoramento*, entre outras, utilização da rede, carga da CPU e consumo de espaço em disco
+O **Zabbix** é um *software livre* de *monitoramento para diversos componentes de TI, incluindo redes, servidores, máquinas virtuais e serviços em nuvem*. O **Zabbix** fornece *métricas de monitoramento*, entre outras, utilização da rede, carga da CPU e consumo de espaço em disco.
 
 Usaremos uma máquina **Ubuntu 18.04**.
 
