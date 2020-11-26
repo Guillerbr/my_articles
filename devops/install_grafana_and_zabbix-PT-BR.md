@@ -329,7 +329,7 @@ No painel do Grafana em *Data Sources*
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/osgazwcqfz287yrb7n7q.png)
 
-*Selecione o zabbix*
+*Selecione o Zabbix*
 
 ### Configuração
 
