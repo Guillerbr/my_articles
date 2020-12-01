@@ -340,7 +340,7 @@ No painel do Grafana em *Data Sources*
 Nessa página de configuração, devemos informar os dados do usuário do *zabbix* criado nas etapas anteriores.
 O usuário é *Admin* e a senha é *zabbix*.
 
-**Name**: Defina um nome para esse datasource
+**Name**: Defina um nome para esse datasource.
 
 **URL**: A url que responde pela API do Zabbix.
 
@@ -363,7 +363,7 @@ Essas são as principais configurações para ter uma integração funcional, pa
 Agora é preciso criar os painéis de dashboard do **Grafana** e configurar com o **Zabbix Server**.
 
 
-
+...EM CONSTRUÇÃO...
 
 
 
@@ -383,7 +383,7 @@ Doc Instalação Zabbix-Ubuntu:
 
 https://noto-site.s3.us-east-2.amazonaws.com/EBOOK/Ebook+2+Zabbix+5.0.+vers%C3%A3o+1.pdf?utm_source=leadlovers&utm_medium=email&utm_campaign=%5BFunil%20Inicial%5D%20&utm_content=NOTO%20-%20Bnus%20Zabbix
 
-Videos:
+## Videos:
 
 https://www.youtube.com/watch?v=pJIHeG0kJNM&feature=emb_title
 
