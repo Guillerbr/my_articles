@@ -288,6 +288,8 @@ Se tudo estiver instalado corretamente, você chegará nessa tela após o login.
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/ovl48smmow9z1tffvgie.png)
 
 
+
+
 # Integração
 
 ## Instalando o plugin do *Zabbix* no *Grafana*
