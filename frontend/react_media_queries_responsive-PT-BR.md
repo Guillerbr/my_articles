@@ -209,6 +209,8 @@ readaptando conforme seu tamanho.
 
 Tutorial:
 
+https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+
 https://medium.com/reactbrasil/utilizando-media-queries-no-react-com-styled-components-f0f3160f3f01
 
 https://dev.to/carloscne/criando-paginas-responsivas-e-adaptativas-com-react-e-styled-components-1gje
