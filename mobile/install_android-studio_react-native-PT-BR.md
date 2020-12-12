@@ -1,0 +1,1 @@
+## Guia de intalação do Android Studio para o React Native no Windows
