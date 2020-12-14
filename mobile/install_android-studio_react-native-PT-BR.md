@@ -3,8 +3,6 @@
 
 
 
-
-
 Referências:
 
     https://dev.to/alexandrefreire/como-instalar-react-native-windows-e-android-466f
