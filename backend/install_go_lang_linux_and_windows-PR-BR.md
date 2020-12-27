@@ -27,10 +27,24 @@ Output
 2a3fdabf665496a0db5f41ec6af7a9b15a49fbe71a85a50ca38b1f13a103aeec  go1.12.1.linux-amd64.tar.gz 
 ``` 
 
+Em seguida, extraia o arquivo baixado e instale-o no local desejado no sistema. É considerado uma boa prática mantê-lo em /usr/local:
+
+``` sudo tar -xvf go1.12.1.linux-amd64.tar.gz -C /usr/local ``` 
+
+Você terá agora um diretório chamado go no diretório /usr/local. Em seguida, altere recursivamente o proprietário e o grupo deste diretório para root:
+
+
+``` sudo chown -R root:root /usr/local/go ```
+
+Isso protegerá todos os arquivos e garantirá que apenas o usuário root possa executar os binários do Go.
+
+
 
 
 Referência:
+
 https://www.digitalocean.com/community/tutorials/como-instalar-o-go-e-configurar-um-ambiente-de-programacao-local-no-ubuntu-18-04-pt
 
 Oficial Go Lang Web Site:
+
 https://golang.org/
