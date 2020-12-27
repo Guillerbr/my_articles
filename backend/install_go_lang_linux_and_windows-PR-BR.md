@@ -24,9 +24,13 @@ O hash que é exibido a partir da execução do comando acima deve corresponder 
 
 ``` 
 Output
-2a3fdabf665496a0db5f41ec6af7a9b15a49fbe71a85a50ca38b1f13a103aeec  go1.12.1.linux-amd64.tar.gz ``` 
+2a3fdabf665496a0db5f41ec6af7a9b15a49fbe71a85a50ca38b1f13a103aeec  go1.12.1.linux-amd64.tar.gz 
+``` 
 
 
 
 Referência:
+https://www.digitalocean.com/community/tutorials/como-instalar-o-go-e-configurar-um-ambiente-de-programacao-local-no-ubuntu-18-04-pt
+
+Oficial Go Lang Web Site:
 https://golang.org/
