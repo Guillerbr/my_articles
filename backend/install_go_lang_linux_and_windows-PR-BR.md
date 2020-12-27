@@ -1,7 +1,5 @@
-Referência:
-https://golang.org/
 
-Como instalar o **Go Lang** em máquinas *Linux* e *Windows* :
+## Como instalar o **Go Lang** em máquinas *Linux* e *Windows* :
 
 Go é uma linguagem de programação que nasceu da frustração no Google. Os desenvolvedores precisavam escolher continuamente uma linguagem que fosse executada com eficiência, mas demoravam muito tempo para compilar ou escolher uma linguagem fácil de programar, mas que era executada de forma ineficiente em produção. O Go foi projetado para ter todas as três características disponíveis ao mesmo tempo: compilação rápida, facilidade de programação e execução eficiente em produção.
 
@@ -16,3 +14,9 @@ Quando o terminal estiver aberto, você instalará manualmente os binários do G
 Use o *curl* para recuperar a URL do tarball que você copiou da página oficial de downloads do Go:
 
 ``` curl -O https://dl.google.com/go/go1.12.1.linux-amd64.tar.gz  ```
+
+
+
+
+Referência:
+https://golang.org/
