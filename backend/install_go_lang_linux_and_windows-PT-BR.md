@@ -5,9 +5,9 @@ Go é uma linguagem de programação que nasceu da frustração no Google. Os de
 
 Instalando no Linux Ubuntu 18.04:
 
-``` sudo apt-get update ```
+```bash sudo apt-get update ```
 
-``` sudo apt-get upgrade ```
+```bash sudo apt-get upgrade ```
 
 Antes de baixar o Go, certifique-se de estar no diretório home (~):
 
