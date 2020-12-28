@@ -53,9 +53,6 @@ Testando se o Go esta instalado usando o comando para verificar a versão.
 
 
 
-
-
-
 Referência:
 
 https://www.digitalocean.com/community/tutorials/como-instalar-o-go-e-configurar-um-ambiente-de-programacao-local-no-ubuntu-18-04-pt
