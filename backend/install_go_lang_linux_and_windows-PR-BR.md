@@ -9,6 +9,11 @@ Instalando no Linux Ubuntu 18.04:
 
 ``` sudo apt-get upgrade ```
 
+Antes de baixar o Go, certifique-se de estar no diretório home (~):
+
+
+``` cd ~ ```
+
 Quando o terminal estiver aberto, você instalará manualmente os binários do Go. Embora você possa usar um gerenciador de pacotes, percorrer as etapas de instalação manual o ajudará a entender as alterações de configuração necessárias ao sistema para ter um workspace Go válido.
 
 Use o *curl* para recuperar a URL do tarball que você copiou da página oficial de downloads do Go:
@@ -37,6 +42,13 @@ Você terá agora um diretório chamado go no diretório /usr/local. Em seguida,
 ``` sudo chown -R root:root /usr/local/go ```
 
 Isso protegerá todos os arquivos e garantirá que apenas o usuário root possa executar os binários do Go.
+
+Nesta etapa, você baixou e instalou o Go na sua máquina Ubuntu 18.04. Na próxima etapa, você configurará seu workspace de **Go**.
+
+Testando se o Go esta instalado usando o comando para verificar a versão.
+
+ 
+``` go version ```
 
 
 
