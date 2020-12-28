@@ -41,6 +41,9 @@ Isso protegerá todos os arquivos e garantirá que apenas o usuário root possa 
 
 
 
+
+
+
 Referência:
 
 https://www.digitalocean.com/community/tutorials/como-instalar-o-go-e-configurar-um-ambiente-de-programacao-local-no-ubuntu-18-04-pt
