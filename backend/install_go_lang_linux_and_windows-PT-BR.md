@@ -3,7 +3,7 @@
 
 Go é uma linguagem de programação que nasceu da frustração no Google. Os desenvolvedores precisavam escolher continuamente uma linguagem que fosse executada com eficiência, mas demoravam muito tempo para compilar ou escolher uma linguagem fácil de programar, mas que era executada de forma ineficiente em produção. O Go foi projetado para ter todas as três características disponíveis ao mesmo tempo: compilação rápida, facilidade de programação e execução eficiente em produção.
 
-Instalando no Linux Ubuntu 18.04:
+### Instalando no Linux Ubuntu 18.04:
 
 ```bash sudo apt-get update ```
 
@@ -51,6 +51,7 @@ Testando se o Go esta instalado usando o comando para verificar a versão.
 ``` go version ```
 
 
+### Windows 
 
 
 Referência:
