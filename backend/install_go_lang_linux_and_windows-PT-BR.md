@@ -50,14 +50,30 @@ Testando se o Go esta instalado usando o comando para verificar a versão.
  
 ``` go version ```
 
+### Windows 10
+
+Para instalar o Go basta deslocar-nos ao site da linguagem e clicar no botão azul que diz “Download Go” por baixo da mascote, o gopher, que é uma espécie de roedor. Ao clicar somos encaminhados para uma página que contém todas as opções de download para os diversos sistemas operativos.
 
 
-### Windows 
+https://golang.org/
+
+Pré-requisitos
+Você precisará de uma máquina com Windows 10 - com acesso administrativo e conectada à Internet.
+
+Passo 1 — Abrindo e configurando o PowerShell
+
+Passo 2 — Instalando o gerenciador de pacotes Chocolatey
+
+
+## Agora no menu iniciar do Windows escrevemos **variáveis de ambiente**, no meu caso em inglês mas deve ser algo semelhante à seguinte:
+
 
 
 Referência:
 
 https://www.digitalocean.com/community/tutorials/como-instalar-o-go-e-configurar-um-ambiente-de-programacao-local-no-ubuntu-18-04-pt
+
+
 
 Oficial Go Lang Web Site:
 
