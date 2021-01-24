@@ -68,7 +68,6 @@ Passo 2 — Instalando o gerenciador de pacotes Chocolatey
 ## Agora no menu iniciar do Windows escrevemos **variáveis de ambiente**, no meu caso em inglês mas deve ser algo semelhante à seguinte:
 
 
-
 Referência:
 
 https://www.digitalocean.com/community/tutorials/como-instalar-o-go-e-configurar-um-ambiente-de-programacao-local-no-ubuntu-18-04-pt
