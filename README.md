@@ -17,7 +17,7 @@ Eu também lhe serei eternamente grato!
 Você pode fazer uma doação diretamente para minha conta, usando o **PIX**
  *Sistema de Pagamentos Digitais do Banco Central do Brasil*
 
-É só enviar o valor para essa **Chave PIX:**
+É só enviar o valor para essa **chave PIX:**
 
 ```  
 6b31a8d6-e176-432d-9e0b-f0f649232efc
