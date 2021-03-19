@@ -1,4 +1,6 @@
-# Reactjs Login
+# Autenticação Cookies HTTP, HTTP Only, JWT, SessionStorage, LocalStorage com ReactJs UI e Nodejs API.
+## Visão geral
+O objetivo desta artigo é apresentar, discutir e fornecer técnicas de mitigação específicas sobre as melhores práticas de autenticação e sessão de usuários, usando *Cookies, Http Only, JWT, Sessão, LocalStorage, e outros métodos.*
 
 
 
