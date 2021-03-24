@@ -5,6 +5,12 @@ O objetivo desta artigo é apresentar, discutir e fornecer técnicas de mitigaç
 ## Cookies Http
 Um cookie HTTP (um cookie web ou cookie de navegador) é um pequeno fragmento de dados que um servidor envia para o navegador do usuário. O navegador pode armazenar estes dados e enviá-los de volta na próxima requisição para o mesmo servidor. Normalmente é utilizado para identificar se duas requisições vieram do mesmo navegador — ao manter um usuário logado, por exemplo. Ele guarda informações dinâmicas para o protocolo HTTP sem estado.
 
+#### Cookies são usados principalmente para três propósitos:
+
+
+##### Gerenciamento de sessão:
+Logins, carrinhos de compra, placar de jogos ou qualquer outra atividade que deva ser guardada por um servidor.
+
 
 
 
