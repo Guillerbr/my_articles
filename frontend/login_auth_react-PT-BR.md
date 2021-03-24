@@ -7,11 +7,18 @@ Um cookie HTTP (um cookie web ou cookie de navegador) é um pequeno fragmento de
 
 #### Cookies são usados principalmente para três propósitos:
 
-
 ##### Gerenciamento de sessão:
 Logins, carrinhos de compra, placar de jogos ou qualquer outra atividade que deva ser guardada por um servidor.
 
+##### Personalização:
+Preferências de usuário, temas e outras configurações.
 
+##### Rastreamento:
+Registro e análise do comportamento de um usuário.
+
+## Http Only
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oqh0wmupnkvrq8vp8ig8.png)
 
 
 **Links e Referências:**
