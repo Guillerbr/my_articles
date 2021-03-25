@@ -20,6 +20,8 @@ Registro e análise do comportamento de um usuário.
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oqh0wmupnkvrq8vp8ig8.png)
 
+#### O que é HttpOnly?
+Acordo com a Microsoft Developer Network , HttpOnly é um sinalizador adicional incluído em um cabeçalho de resposta HTTP Set-Cookie. Usar o sinalizador HttpOnly ao gerar um cookie ajuda a mitigar o risco de o script do lado do cliente acessar o cookie protegido (se o navegador oferecer suporte).
 
 **Links e Referências:**
 
