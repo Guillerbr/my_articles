@@ -34,6 +34,10 @@ Acordo com a Microsoft Developer Network , HttpOnly é um sinalizador adicional 
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bjpz9k516q6cxhps8xo0.png)
 
+#### Autenticação de usuário utilizando o mecanismo chamado JWT (JSON Web Token)
+
+Estratégia de autenticação para APIs em REST simples e segura. Trata-se de um padrão aberto para autenticações web e é totalmente baseada em requests JSON entre o cliente e servidor. Seu mecanismo de autenticação funciona da seguinte maneira:
+
 **Links e Referências:**
 
 https://owasp.org/www-community/HttpOnly
