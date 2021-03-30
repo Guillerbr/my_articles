@@ -50,6 +50,11 @@ Estratégia de autenticação para APIs em REST simples e segura. Trata-se de um
   
 ###### JWT (JSON Web Token) é um método RCT 7519 padrão da indústria para realizar autenticação entre duas partes por meio de um token assinado que autentica uma requisição web. Esse token é um código em Base64 que armazena objetos JSON com os dados que permitem a autenticação da requisição.
 
+Com um *token* construído e seguro, é matematicamente impossível decodificar a assinatura sem ter o segredo-chave da aplicação. Porém, uma vez em posse do segredo, qualquer aplicação pode decodificar a assinatura e verificar se ela é válida. Isso é feito gerando uma *signature* utilizando o header e o *payload* fornecidos pelo cliente para então comparamos essa *signature* gerada com a presente no *token* enviado pelo cliente. Uma vez que as assinaturas sejam idênticas, podemos permitir o acesso do cliente a uma área restrita da nossa aplicação.
+
+https://jwt.io/
+
+
 **Links e Referências:**
 
 https://owasp.org/www-community/HttpOnly
