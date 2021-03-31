@@ -54,6 +54,8 @@ Com um *token* construído e seguro, é matematicamente impossível decodificar 
 
 https://jwt.io/
 
+## SessionStorage e LocalStorage
+
 
 **Links e Referências:**
 
