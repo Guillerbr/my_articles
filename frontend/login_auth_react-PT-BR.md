@@ -56,6 +56,8 @@ https://jwt.io/
 
 ## SessionStorage e LocalStorage
 
+Armazenar um token de usuário.Nesta etapa, você armazenará o token do usuário. Você implementará diferentes opções de armazenamento de *tokens* e aprenderá as implicações de segurança de cada abordagem. Por fim, você aprenderá como diferentes abordagens mudarão a experiência do usuário à medida que ele abre novas guias ou fecha uma sessão.
+
 
 **Links e Referências:**
 
