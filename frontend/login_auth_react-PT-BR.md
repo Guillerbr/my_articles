@@ -58,6 +58,8 @@ https://jwt.io/
 
 Armazenar um token de usuário.Nesta etapa, você armazenará o token do usuário. Você implementará diferentes opções de armazenamento de *tokens* e aprenderá as implicações de segurança de cada abordagem. Por fim, você aprenderá como diferentes abordagens mudarão a experiência do usuário à medida que ele abre novas guias ou fecha uma sessão.
 
+Ao final desta etapa, você poderá escolher uma abordagem de armazenamento com base nos objetivos de seu aplicativo.
+
 
 **Links e Referências:**
 
