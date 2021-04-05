@@ -30,6 +30,20 @@ Registro e análise do comportamento de um usuário.
 
 Acordo com a Microsoft Developer Network , HttpOnly é um sinalizador adicional incluído em um cabeçalho de resposta HTTP Set-Cookie. Usar o sinalizador HttpOnly ao gerar um cookie ajuda a mitigar o risco de o script do lado do cliente acessar o cookie protegido (se o navegador oferecer suporte).
 
+Para se prevenir de ataques cross-site scripting (XSS), os cookies *HttpOnly* são inacessíveis para a API JavaScript Document.cookie (en-US); eles são enviados só para o servidor. Por exemplo, cookies que persistem sessões de servidor não precisam estar disponíves para o JavaScript, e portanto a diretiva *HttpOnly* deve ser configurada.
+
+_Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure; HttpOnly_
+
+Um cookie HttpOnly é uma tag adicionada a um cookie do navegador que impede que os scripts do lado do cliente acessem os dados. Ele fornece uma porta que evita que o cookie especializado seja acessado por qualquer coisa que não seja o servidor. Usar a tag HttpOnly ao gerar um cookie ajuda a reduzir o risco de scripts do lado do cliente acessarem o cookie protegido, tornando esses cookies mais seguros.
+
+O exemplo abaixo mostra a sintaxe usada no cabeçalho de resposta HTTP:
+
+Set-Cookie: `=“[; “=“]` `[; expires=“][; domain=“]` `[; path=“][; secure][; HttpOnly]`
+
+Se o sinalizador HttpOnly for incluído no cabeçalho de resposta HTTP, o cookie não poderá ser acessado por meio do script do lado do cliente. Como resultado, mesmo que exista uma falha de script entre sites (XSS) e um usuário acesse acidentalmente um link que explora a falha, o navegador não revelará o cookie para terceiros.
+
+Aqui está um exemplo - digamos que um navegador detecte um cookie contendo o sinalizador HttpOnly. Se o código do lado do cliente tentar ler o cookie, o navegador retornará uma string vazia como resultado. Isso ajuda a evitar que códigos maliciosos (geralmente cross-site scripting (XSS)) enviem dados para o site de um invasor.
+
 ## JWT
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bjpz9k516q6cxhps8xo0.png)
@@ -47,27 +61,40 @@ Estratégia de autenticação para APIs em REST simples e segura. Trata-se de um
 - Toda vez que o cliente acessa uma rota que requere autenticação, ele apenas envia esse token para a API para autenticar e liberar os dados de consumo;
 
 - O servidor sempre valida esse token para permitir ou bloquear uma solicitação de cliente.
-  
+
 ###### JWT (JSON Web Token) é um método RCT 7519 padrão da indústria para realizar autenticação entre duas partes por meio de um token assinado que autentica uma requisição web. Esse token é um código em Base64 que armazena objetos JSON com os dados que permitem a autenticação da requisição.
 
-Com um *token* construído e seguro, é matematicamente impossível decodificar a assinatura sem ter o segredo-chave da aplicação. Porém, uma vez em posse do segredo, qualquer aplicação pode decodificar a assinatura e verificar se ela é válida. Isso é feito gerando uma *signature* utilizando o header e o *payload* fornecidos pelo cliente para então comparamos essa *signature* gerada com a presente no *token* enviado pelo cliente. Uma vez que as assinaturas sejam idênticas, podemos permitir o acesso do cliente a uma área restrita da nossa aplicação.
+Com um _token_ construído e seguro, é matematicamente impossível decodificar a assinatura sem ter o segredo-chave da aplicação. Porém, uma vez em posse do segredo, qualquer aplicação pode decodificar a assinatura e verificar se ela é válida. Isso é feito gerando uma _signature_ utilizando o header e o _payload_ fornecidos pelo cliente para então comparamos essa _signature_ gerada com a presente no _token_ enviado pelo cliente. Uma vez que as assinaturas sejam idênticas, podemos permitir o acesso do cliente a uma área restrita da nossa aplicação.
 
 https://jwt.io/
 
 ## SessionStorage e LocalStorage
 
-Armazenar um token de usuário.Nesta etapa, você armazenará o token do usuário. Você implementará diferentes opções de armazenamento de *tokens* e aprenderá as implicações de segurança de cada abordagem. Por fim, você aprenderá como diferentes abordagens mudarão a experiência do usuário à medida que ele abre novas guias ou fecha uma sessão.
+#### SessionStorage
+
+
+
+
+#### LocalStorage
+
+
+
+
+# Aplicação Real
+
+Armazenar um token de usuário.Nesta etapa, você armazenará o token do usuário. Você implementará diferentes opções de armazenamento de _tokens_ e aprenderá as implicações de segurança de cada abordagem. Por fim, você aprenderá como diferentes abordagens mudarão a experiência do usuário à medida que ele abre novas guias ou fecha uma sessão.
 
 Ao final desta etapa, você poderá escolher uma abordagem de armazenamento com base nos objetivos de seu aplicativo.
 
-Existem várias opções para armazenar *tokens*. Cada opção tem custos e benefícios. Resumidamente, as opções são: armazenar na memória *JavaScript*, armazenar *sessionStorage*, armazenar *localStorage* e armazenar em um cookie . A principal compensação é a segurança. Qualquer informação armazenada fora da memória do aplicativo atual é *vulnerável a ataques de Cross-Site Scripting (XSS)* . *O perigo é que, se um usuário mal-intencionado é capaz de carregar código em sua aplicação, ele pode acessar localStorage, sessionStorage e qualquer cookie que também é acessível a sua aplicação*. O benefício dos métodos de armazenamento sem memória é que você pode reduzir o número de vezes que um usuário precisará efetuar login para criar uma melhor experiência do usuário.
+Existem várias opções para armazenar _tokens_. Cada opção tem custos e benefícios. Resumidamente, as opções são: armazenar na memória _JavaScript_, armazenar _sessionStorage_, armazenar _localStorage_ e armazenar em um cookie . A principal compensação é a segurança. Qualquer informação armazenada fora da memória do aplicativo atual é _vulnerável a ataques de Cross-Site Scripting (XSS)_ . _O perigo é que, se um usuário mal-intencionado é capaz de carregar código em sua aplicação, ele pode acessar localStorage, sessionStorage e qualquer cookie que também é acessível a sua aplicação_. O benefício dos métodos de armazenamento sem memória é que você pode reduzir o número de vezes que um usuário precisará efetuar login para criar uma melhor experiência do usuário.
 
-Este tutorial irá cobrir *sessionStorage e localStorage*, uma vez que estes são mais modernos do que usar cookies.
-
+Este tutorial irá cobrir _sessionStorage e localStorage_, uma vez que estes são mais modernos do que usar cookies.
 
 **Links e Referências:**
 
 https://owasp.org/www-community/HttpOnly
+
+https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
 
 https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Cookies
 
