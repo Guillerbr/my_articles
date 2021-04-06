@@ -90,6 +90,10 @@ Existem várias opções para armazenar _tokens_. Cada opção tem custos e bene
 
 Este tutorial irá cobrir _sessionStorage e localStorage_, uma vez que estes são mais modernos do que usar cookies.
 
+# Aplicação do Mundo Real
+
+
+
 **Links e Referências:**
 
 https://owasp.org/www-community/HttpOnly
