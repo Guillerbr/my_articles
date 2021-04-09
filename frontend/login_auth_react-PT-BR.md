@@ -96,6 +96,7 @@ Armazenar um token de usuário.Nesta etapa, você armazenará o token do usuári
 
 Ao final desta etapa, você poderá escolher uma abordagem de armazenamento com base nos objetivos de seu aplicativo.
 
+Existem várias opções para armazenar *tokens*. Cada opção tem custos e benefícios. Resumidamente, as opções são: armazenar na memória *JavaScript*, armazenar *sessionStorage*, armazenar *localStorage* e armazenar em um cookie . A principal compensação é a segurança. Qualquer informação armazenada fora da memória do aplicativo atual é *vulnerável a ataques de Cross-Site Scripting (XSS)* . *O perigo é que, se um usuário mal-intencionado é capaz de carregar código em sua aplicação, ele pode acessar localStorage, sessionStorage e qualquer cookie que também é acessível a sua aplicação*. O benefício dos métodos de armazenamento sem memória é que você pode reduzir o número de vezes que um usuário precisará efetuar login para criar uma melhor experiência do usuário.
 
 
 
