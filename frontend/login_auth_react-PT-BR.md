@@ -123,6 +123,9 @@ Existem várias opções para armazenar _tokens_. Cada opção tem custos e bene
 
 Este tutorial irá cobrir *sessionStorage e localStorage*, uma vez que estes são mais modernos do que usar cookies.
 
+- Armazenamento de Sessão
+Para testar os benefícios de armazenamento fora da memória, converta o armazenamento na memória para sessionStorage. Aberto App.js:
+
 **Links e Referências:**
 
 https://owasp.org/www-community/HttpOnly
