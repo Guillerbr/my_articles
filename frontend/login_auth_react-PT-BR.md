@@ -121,6 +121,8 @@ Ao final desta etapa, você poderá escolher uma abordagem de armazenamento com 
 
 Existem várias opções para armazenar _tokens_. Cada opção tem custos e benefícios. Resumidamente, as opções são: armazenar na memória _JavaScript_, armazenar _sessionStorage_, armazenar _localStorage_ e armazenar em um cookie . A principal compensação é a segurança. Qualquer informação armazenada fora da memória do aplicativo atual é _vulnerável a ataques de Cross-Site Scripting (XSS)_ . _O perigo é que, se um usuário mal-intencionado é capaz de carregar código em sua aplicação, ele pode acessar localStorage, sessionStorage e qualquer cookie que também é acessível a sua aplicação_. O benefício dos métodos de armazenamento sem memória é que você pode reduzir o número de vezes que um usuário precisará efetuar login para criar uma melhor experiência do usuário.
 
+Este tutorial irá cobrir *sessionStorage e localStorage*, uma vez que estes são mais modernos do que usar cookies.
+
 **Links e Referências:**
 
 https://owasp.org/www-community/HttpOnly
