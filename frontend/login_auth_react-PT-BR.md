@@ -30,7 +30,7 @@ Registro e análise do comportamento de um usuário.
 
 Acordo com a Microsoft Developer Network , HttpOnly é um sinalizador adicional incluído em um cabeçalho de resposta HTTP Set-Cookie. Usar o sinalizador HttpOnly ao gerar um cookie ajuda a mitigar o risco de o script do lado do cliente acessar o cookie protegido (se o navegador oferecer suporte).
 
-Para se prevenir de ataques cross-site scripting (XSS), os cookies *HttpOnly* são inacessíveis para a API JavaScript Document.cookie (en-US); eles são enviados só para o servidor. Por exemplo, cookies que persistem sessões de servidor não precisam estar disponíves para o JavaScript, e portanto a diretiva *HttpOnly* deve ser configurada.
+Para se prevenir de ataques cross-site scripting (XSS), os cookies _HttpOnly_ são inacessíveis para a API JavaScript Document.cookie (en-US); eles são enviados só para o servidor. Por exemplo, cookies que persistem sessões de servidor não precisam estar disponíves para o JavaScript, e portanto a diretiva _HttpOnly_ deve ser configurada.
 
 _Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure; HttpOnly_
 
@@ -72,14 +72,37 @@ https://jwt.io/
 
 #### SessionStorage
 
+- A **sessionStorage** é similar ao localStorage , a única diferença é que enquanto os dados armazenados **no localStorage não expiram, os dados no sessionstorage tem os seus dados limpos ao expirar a sessão da página.** A sessão da página dura enquanto o browser está aberto e se mantém no recarregamento da página.
 
+- O armazenamento na Web pode ser visto de maneira simplista como uma melhoria nos cookies, oferecendo uma capacidade de armazenamento muito maior. O tamanho disponível é de 5 MB, o que representa consideravelmente mais espaço para trabalhar do que um cookie típico de 4KB.
 
+- Os dados não são enviados de volta ao servidor para cada solicitação HTTP (HTML, imagens, JavaScript, CSS, etc) — reduzindo a quantidade de tráfego entre o cliente e o servidor.
+
+- Os dados armazenados no localStorage persistem até serem excluídos explicitamente. As alterações feitas são salvas e estão disponíveis para todas as visitas atuais e futuras ao site.
+
+- Funciona na política de mesma origem. Portanto, os dados armazenados só estarão disponíveis na mesma origem.
 
 #### LocalStorage
 
+Usam o *localStorage* para armazenar variáveis temporárias.
 
+É semelhante ao localStorage.
 
+- As alterações só estão disponíveis por janela (ou em navegadores como o Chrome e o Firefox). As alterações feitas são salvas e disponibilizadas para a página atual, bem como futuras visitas ao site na mesma janela. Depois que a janela é fechada, o armazenamento é excluído
 
+- Os dados estão disponíveis somente dentro da janela / guia na qual foram definidos.
+
+- Os dados não são persistentes, isto é, serão perdidos quando a janela / guia for fechada. Como o localStorage, ele funciona na política de mesma origem. Portanto, os dados armazenados só estarão disponíveis na mesma origem.
+
+##### Considerações Local e Session Storage
+
+Ambos *localStorage e sessionStorage* se extendem de *Storage*. Não há diferença entre eles, exceto para a não-persistência de *sessionStorage*.
+
+A não-persistência como descrito acima é no sentido de que *sessionStorage* se faz disponível apenas para a janela que criou os dados até que tal janela seja fechada, ao abrir outra janela(ou aba) tais dados não estarão disponíveis.
+
+Em contrapartida de *sessionStorage*, ao criar dados em *localStorage* esses dados estarão disponíveis para qualquer aba/janela mesmo que o usuário encerre a janela, reinicie o sistema, etc.
+
+Um exemplo, vamos supor que você deseja salvar o nome de usuário e senha para realizar um login, é provável que você opte por armazenar esses dados em sessionStorage por motivos de segurança e salvar as configurações de usuário em localStorage.
 # Aplicação Real
 
 Armazenar um token de usuário.Nesta etapa, você armazenará o token do usuário. Você implementará diferentes opções de armazenamento de _tokens_ e aprenderá as implicações de segurança de cada abordagem. Por fim, você aprenderá como diferentes abordagens mudarão a experiência do usuário à medida que ele abre novas guias ou fecha uma sessão.
@@ -92,13 +115,11 @@ Este tutorial irá cobrir _sessionStorage e localStorage_, uma vez que estes sã
 
 # Aplicação do Mundo Real
 
-Armazenar um token de usuário.Nesta etapa, você armazenará o token do usuário. Você implementará diferentes opções de armazenamento de *tokens* e aprenderá as implicações de segurança de cada abordagem. Por fim, você aprenderá como diferentes abordagens mudarão a experiência do usuário à medida que ele abre novas guias ou fecha uma sessão.
+Armazenar um token de usuário.Nesta etapa, você armazenará o token do usuário. Você implementará diferentes opções de armazenamento de _tokens_ e aprenderá as implicações de segurança de cada abordagem. Por fim, você aprenderá como diferentes abordagens mudarão a experiência do usuário à medida que ele abre novas guias ou fecha uma sessão.
 
 Ao final desta etapa, você poderá escolher uma abordagem de armazenamento com base nos objetivos de seu aplicativo.
 
-Existem várias opções para armazenar *tokens*. Cada opção tem custos e benefícios. Resumidamente, as opções são: armazenar na memória *JavaScript*, armazenar *sessionStorage*, armazenar *localStorage* e armazenar em um cookie . A principal compensação é a segurança. Qualquer informação armazenada fora da memória do aplicativo atual é *vulnerável a ataques de Cross-Site Scripting (XSS)* . *O perigo é que, se um usuário mal-intencionado é capaz de carregar código em sua aplicação, ele pode acessar localStorage, sessionStorage e qualquer cookie que também é acessível a sua aplicação*. O benefício dos métodos de armazenamento sem memória é que você pode reduzir o número de vezes que um usuário precisará efetuar login para criar uma melhor experiência do usuário.
-
-
+Existem várias opções para armazenar _tokens_. Cada opção tem custos e benefícios. Resumidamente, as opções são: armazenar na memória _JavaScript_, armazenar _sessionStorage_, armazenar _localStorage_ e armazenar em um cookie . A principal compensação é a segurança. Qualquer informação armazenada fora da memória do aplicativo atual é _vulnerável a ataques de Cross-Site Scripting (XSS)_ . _O perigo é que, se um usuário mal-intencionado é capaz de carregar código em sua aplicação, ele pode acessar localStorage, sessionStorage e qualquer cookie que também é acessível a sua aplicação_. O benefício dos métodos de armazenamento sem memória é que você pode reduzir o número de vezes que um usuário precisará efetuar login para criar uma melhor experiência do usuário.
 
 **Links e Referências:**
 
