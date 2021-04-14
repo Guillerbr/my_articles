@@ -84,7 +84,7 @@ https://jwt.io/
 
 #### LocalStorage
 
-Usam o *localStorage* para armazenar variáveis temporárias.
+Usam o _localStorage_ para armazenar variáveis temporárias.
 
 É semelhante ao localStorage.
 
@@ -96,13 +96,14 @@ Usam o *localStorage* para armazenar variáveis temporárias.
 
 ##### Considerações Local e Session Storage
 
-Ambos *localStorage e sessionStorage* se extendem de *Storage*. Não há diferença entre eles, exceto para a não-persistência de *sessionStorage*.
+Ambos _localStorage e sessionStorage_ se extendem de _Storage_. Não há diferença entre eles, exceto para a não-persistência de _sessionStorage_.
 
-A não-persistência como descrito acima é no sentido de que *sessionStorage* se faz disponível apenas para a janela que criou os dados até que tal janela seja fechada, ao abrir outra janela(ou aba) tais dados não estarão disponíveis.
+A não-persistência como descrito acima é no sentido de que _sessionStorage_ se faz disponível apenas para a janela que criou os dados até que tal janela seja fechada, ao abrir outra janela(ou aba) tais dados não estarão disponíveis.
 
-Em contrapartida de *sessionStorage*, ao criar dados em *localStorage* esses dados estarão disponíveis para qualquer aba/janela mesmo que o usuário encerre a janela, reinicie o sistema, etc.
+Em contrapartida de _sessionStorage_, ao criar dados em _localStorage_ esses dados estarão disponíveis para qualquer aba/janela mesmo que o usuário encerre a janela, reinicie o sistema, etc.
 
 Um exemplo, vamos supor que você deseja salvar o nome de usuário e senha para realizar um login, é provável que você opte por armazenar esses dados em sessionStorage por motivos de segurança e salvar as configurações de usuário em localStorage.
+
 # Aplicação Real
 
 Armazenar um token de usuário.Nesta etapa, você armazenará o token do usuário. Você implementará diferentes opções de armazenamento de _tokens_ e aprenderá as implicações de segurança de cada abordagem. Por fim, você aprenderá como diferentes abordagens mudarão a experiência do usuário à medida que ele abre novas guias ou fecha uma sessão.
@@ -121,12 +122,17 @@ Ao final desta etapa, você poderá escolher uma abordagem de armazenamento com 
 
 Existem várias opções para armazenar _tokens_. Cada opção tem custos e benefícios. Resumidamente, as opções são: armazenar na memória _JavaScript_, armazenar _sessionStorage_, armazenar _localStorage_ e armazenar em um cookie . A principal compensação é a segurança. Qualquer informação armazenada fora da memória do aplicativo atual é _vulnerável a ataques de Cross-Site Scripting (XSS)_ . _O perigo é que, se um usuário mal-intencionado é capaz de carregar código em sua aplicação, ele pode acessar localStorage, sessionStorage e qualquer cookie que também é acessível a sua aplicação_. O benefício dos métodos de armazenamento sem memória é que você pode reduzir o número de vezes que um usuário precisará efetuar login para criar uma melhor experiência do usuário.
 
-Este tutorial irá cobrir *sessionStorage e localStorage*, uma vez que estes são mais modernos do que usar cookies.
+Este tutorial irá cobrir _sessionStorage e localStorage_, uma vez que estes são mais modernos do que usar cookies.
 
 - Armazenamento de Sessão
-Para testar os benefícios de armazenamento fora da memória, converta o armazenamento na memória para sessionStorage.
+  Para testar os benefícios de armazenamento fora da memória, converta o armazenamento na memória para sessionStorage.
 
 # Usando o cliente frontend ReactJs para interfaces para o usuário.
+
+- Você deve ter conhecimentos básicos e intermediários sobre *ReactJs* para compreender mais facilmente a implantação se um serviço de autenticação *segura* *moderna* *da comunidade* para logar e deslogar um usuário em um sistema web.
+
+
+
 
 
 **Links e Referências:**
