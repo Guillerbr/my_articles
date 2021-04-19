@@ -131,6 +131,7 @@ Este tutorial irá cobrir _sessionStorage e localStorage_, uma vez que estes sã
 
 - Você deve ter conhecimentos básicos e intermediários sobre _ReactJs_ para compreender mais facilmente a implantação se um serviço de autenticação _segura_ _moderna_ _da comunidade_ para logar e deslogar um usuário em um sistema web.
 
+
 ## Quais são as vulnerabilidades?
 
 Ambos os métodos vêm com possíveis problemas de segurança relacionados.
