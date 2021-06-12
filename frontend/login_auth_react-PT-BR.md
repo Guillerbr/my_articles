@@ -134,7 +134,7 @@ Este tutorial irá cobrir _sessionStorage e localStorage_, uma vez que estes sã
 ## Quais são as vulnerabilidades?
 
 
-Ambos os métodos vêm com possíveis problemas de segurança relacionados.
+Ambos os métodos vêm com possíveis problemas de segurança relacionados...
 
 **Links e Referências:**
 
