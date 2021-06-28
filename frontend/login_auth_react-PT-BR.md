@@ -1,6 +1,4 @@
-# Autenticação Cookies HTTP, HTTP Only, JWT, SessionStorage, LocalStorage com ReactJs UI e Nodejs API.
-
-## Visão geral
+# Visão geral
 
 O objetivo desta artigo é apresentar, discutir e fornecer técnicas de mitigação específicas sobre as melhores práticas de autenticação e sessão de usuários, usando _Cookies, Http Only, JWT, Sessão, LocalStorage, e outros métodos._
 
@@ -22,6 +20,12 @@ Preferências de usuário, temas e outras configurações.
 
 Registro e análise do comportamento de um usuário.
 
+- Podemos definir o tempo de expiração para cada cookie
+
+- O limite de 4K é para o cookie inteiro, incluindo nome, valor, data de expiração, etc. Para suportar a maioria dos navegadores, mantenha o nome abaixo de 4000 bytes e o tamanho geral do cookie abaixo de 4093 bytes.
+
+- Os dados são enviados de volta ao servidor para cada solicitação HTTP (HTML, imagens, JavaScript, CSS, etc) — aumentando a quantidade de tráfego entre o cliente e o servidor.
+
 ## Http Only
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oqh0wmupnkvrq8vp8ig8.png)
@@ -32,17 +36,21 @@ Acordo com a Microsoft Developer Network , HttpOnly é um sinalizador adicional 
 
 Para se prevenir de ataques cross-site scripting (XSS), os cookies _HttpOnly_ são inacessíveis para a API JavaScript Document.cookie (en-US); eles são enviados só para o servidor. Por exemplo, cookies que persistem sessões de servidor não precisam estar disponíves para o JavaScript, e portanto a diretiva _HttpOnly_ deve ser configurada.
 
+```javascript
 _Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure; HttpOnly_
+```
 
-Um cookie HttpOnly é uma tag adicionada a um cookie do navegador que impede que os scripts do lado do cliente acessem os dados. Ele fornece uma porta que evita que o cookie especializado seja acessado por qualquer coisa que não seja o servidor. Usar a tag HttpOnly ao gerar um cookie ajuda a reduzir o risco de scripts do lado do cliente acessarem o cookie protegido, tornando esses cookies mais seguros.
+Um cookie _HttpOnly_ é uma tag adicionada a um cookie do navegador que impede que os scripts do lado do cliente acessem os dados. Ele fornece uma porta que evita que o cookie especializado seja acessado por qualquer coisa que não seja o servidor. Usar a tag HttpOnly ao gerar um cookie ajuda a reduzir o risco de scripts do lado do cliente acessarem o cookie protegido, tornando esses cookies mais seguros.
 
-O exemplo abaixo mostra a sintaxe usada no cabeçalho de resposta HTTP:
+##### O exemplo abaixo mostra a sintaxe usada no cabeçalho de resposta HTTP:
 
+```javascript
 Set-Cookie: `=“[; “=“]` `[; expires=“][; domain=“]` `[; path=“][; secure][; HttpOnly]`
+```
 
-Se o sinalizador HttpOnly for incluído no cabeçalho de resposta HTTP, o cookie não poderá ser acessado por meio do script do lado do cliente. Como resultado, mesmo que exista uma falha de script entre sites (XSS) e um usuário acesse acidentalmente um link que explora a falha, o navegador não revelará o cookie para terceiros.
+Se o sinalizador **HttpOnly for incluído no cabeçalho de resposta HTTP, o cookie não poderá ser acessado por meio do script do lado do cliente.** Como resultado, mesmo que exista uma falha de script entre sites (XSS) e um usuário acesse acidentalmente um link que explora a falha, o navegador não revelará o cookie para terceiros.
 
-Aqui está um exemplo - digamos que um navegador detecte um cookie contendo o sinalizador HttpOnly. Se o código do lado do cliente tentar ler o cookie, o navegador retornará uma string vazia como resultado. Isso ajuda a evitar que códigos maliciosos (geralmente cross-site scripting (XSS)) enviem dados para o site de um invasor.
+Aqui está um exemplo - digamos que um navegador detecte um cookie contendo o sinalizador _HttpOnly_. Se o código do lado do cliente tentar ler o cookie, o navegador retornará uma string vazia como resultado. Isso ajuda a _evitar que códigos maliciosos (geralmente cross-site scripting (XSS))_ enviem dados para o site de um invasor.
 
 ## JWT
 
@@ -56,9 +64,9 @@ Estratégia de autenticação para APIs em REST simples e segura. Trata-se de um
 
 - O servidor valida as credenciais e, se tudo estiver certo, ele retorna para o cliente um JSON com um token que codifica dados de um usuário logado no sistema;
 
-- Após receber o token, o cliente pode armazená-lo da forma que preferir, seja por LocalStorage, Cookie ou outros mecanismos de armazenamento do lado do cliente;
+- Após receber o token, o cliente pode armazená-lo da forma que preferir, seja por LocalStorage, SessionStorage, Cookies e HTTP Only e ou outros mecanismos de armazenamento do lado do cliente;
 
-- Toda vez que o cliente acessa uma rota que requere autenticação, ele apenas envia esse token para a API para autenticar e liberar os dados de consumo;
+- Toda vez que o cliente acessa uma rota que requer autenticação, ele apenas envia esse token para a API para autenticar e liberar os dados de consumo;
 
 - O servidor sempre valida esse token para permitir ou bloquear uma solicitação de cliente.
 
@@ -102,17 +110,7 @@ A não-persistência como descrito acima é no sentido de que _sessionStorage_ s
 
 Em contrapartida de _sessionStorage_, ao criar dados em _localStorage_ esses dados estarão disponíveis para qualquer aba/janela mesmo que o usuário encerre a janela, reinicie o sistema, etc.
 
-Um exemplo, vamos supor que você deseja salvar o nome de usuário e senha para realizar um login, é provável que você opte por armazenar esses dados em sessionStorage por motivos de segurança e salvar as configurações de usuário em localStorage.
-
-# Aplicação Real
-
-Armazenar um token de usuário.Nesta etapa, você armazenará o token do usuário. Você implementará diferentes opções de armazenamento de _tokens_ e aprenderá as implicações de segurança de cada abordagem. Por fim, você aprenderá como diferentes abordagens mudarão a experiência do usuário à medida que ele abre novas guias ou fecha uma sessão.
-
-Ao final desta etapa, você poderá escolher uma abordagem de armazenamento com base nos objetivos de seu aplicativo.
-
-Existem várias opções para armazenar _tokens_. Cada opção tem custos e benefícios. Resumidamente, as opções são: armazenar na memória _JavaScript_, armazenar _sessionStorage_, armazenar _localStorage_ e armazenar em um cookie . A principal compensação é a segurança. Qualquer informação armazenada fora da memória do aplicativo atual é _vulnerável a ataques de Cross-Site Scripting (XSS)_ . _O perigo é que, se um usuário mal-intencionado é capaz de carregar código em sua aplicação, ele pode acessar localStorage, sessionStorage e qualquer cookie que também é acessível a sua aplicação_. O benefício dos métodos de armazenamento sem memória é que você pode reduzir o número de vezes que um usuário precisará efetuar login para criar uma melhor experiência do usuário.
-
-Este tutorial irá cobrir _sessionStorage e localStorage_, uma vez que estes são mais modernos do que usar cookies.
+Um exemplo, supondo que você deseja salvar o nome de usuário e senha para realizar um login, é provável que você opte por armazenar esses dados em sessionStorage por motivos de segurança e salvar as configurações de usuário em localStorage.
 
 # Aplicação do Mundo Real
 
@@ -120,27 +118,48 @@ Armazenar um token de usuário.Nesta etapa, você armazenará o token do usuári
 
 Ao final desta etapa, você poderá escolher uma abordagem de armazenamento com base nos objetivos de seu aplicativo.
 
-Existem várias opções para armazenar _tokens_. Cada opção tem custos e benefícios. Resumidamente, as opções são: armazenar na memória _JavaScript_, armazenar _sessionStorage_, armazenar _localStorage_ e armazenar em um cookie . A principal compensação é a segurança. Qualquer informação armazenada fora da memória do aplicativo atual é _vulnerável a ataques de Cross-Site Scripting (XSS)_ . _O perigo é que, se um usuário mal-intencionado é capaz de carregar código em sua aplicação, ele pode acessar localStorage, sessionStorage e qualquer cookie que também é acessível a sua aplicação_. O benefício dos métodos de armazenamento sem memória é que você pode reduzir o número de vezes que um usuário precisará efetuar login para criar uma melhor experiência do usuário.
+Existem várias opções para armazenar _tokens_. Cada opção tem custos e benefícios. Resumidamente, as opções são: armazenar na memória _JavaScript_, armazenar _sessionStorage_, armazenar _localStorage_ e armazenar em um cookie . A principal compensação é a segurança. Qualquer informação armazenada fora da memória do aplicativo atual é _vulnerável a ataques de Cross-Site Scripting (XSS)_ .
 
-Este tutorial irá cobrir _sessionStorage e localStorage_, uma vez que estes são mais modernos do que usar cookies.
+_O perigo é que, se um usuário mal-intencionado é capaz de carregar código em sua aplicação, ele pode acessar localStorage, sessionStorage e qualquer cookie que também é acessível a sua aplicação_.
+
+- O benefício dos métodos de armazenamento sem memória é que você pode reduzir o número de vezes que um usuário precisará efetuar login para criar uma melhor experiência do usuário.
+
+##### Este tutorial irá cobrir _sessionStorage, localStorage, Cookies e HTTP Only_, uma vez que estes são mais modernos.
 
 - Armazenamento de Sessão
-  Para testar os benefícios de armazenamento fora da memória, converta o armazenamento na memória para sessionStorage.
+  Para testar os benefícios de armazenamento fora da memória, converta o armazenamento na memória para _sessionStorage_. Aberto App.js:
 
 # Usando o cliente frontend ReactJs para interfaces para o usuário.
 
-- Você deve ter conhecimentos básicos e intermediários sobre _ReactJs_ para compreender mais facilmente a implantação se um serviço de autenticação _segura_ _moderna_ _da comunidade_ para logar e deslogar um usuário em um sistema web.
+- Você deve ter conhecimentos básicos e intermediários sobre _ReactJs_ para compreender mais facilmente a implantação de um serviço de autenticação _segura_ e _moderna_, amplamente recomendada e usada pela _ comunidade de software livre_ para autenticar um usuário em um sistema web.
 
 ## Quais são as vulnerabilidades?
 
+Ambos os métodos vêm com possíveis problemas de segurança relacionados:
 
-Ambos os métodos vêm com possíveis problemas de segurança relacionados..
+##Método Vulnerabilidade
+Armazenamento local XSS - script entre sites
+Cookies CSRF - Falsificação de solicitação entre sites
 
-**Links e Referências:**
+Uma vulnerabilidade XSS permite que um invasor injete JavaScript em um site.
+Uma vulnerabilidade CSRF permite que um invasor execute ações em um site por meio de um usuário autenticado.
+
+## Como posso contornar isso?
+
+Se o armazenamento local pode ser explorado por scripts de terceiros (como aqueles encontrados nas extensões do navegador) e se a autenticação pode ser falsificada com cookies, onde é aceitável colocar o estado do cliente?
+
+Na autenticação de aplicativo de página única usando cookies nos documentos do Auth0, aprendemos que se seu aplicativo:
+
+É servido ao cliente usando seu próprio back-end
+tem o mesmo domínio que seu back-end
+faz chamadas de API que requerem autenticação para seu back-end
+então há uma maneira de usar cookies para autenticação com segurança.
+
+# EM DESENVOLVIMENTO E CONSTRUÇÃO
+
+_Links e Referências:_
 
 https://owasp.org/www-community/HttpOnly
-
-https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
 
 https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Cookies
 
@@ -148,6 +167,10 @@ https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
 
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API
 
+https://developer.mozilla.org/pt-BR/docs/Web/API/Window/sessionStorage
+
 https://www.taniarascia.com/full-stack-cookies-localstorage-react-express/
 
 https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications#prerequisites
+
+https://www.devmedia.com.br/como-o-jwt-funciona/40265
