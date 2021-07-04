@@ -137,7 +137,7 @@ _O perigo é que, se um usuário mal-intencionado é capaz de carregar código e
 
 Ambos os métodos vêm com possíveis problemas de segurança relacionados:
 
-##Método Vulnerabilidade
+#### Método Vulnerabilidade
 Armazenamento local XSS - script entre sites
 Cookies CSRF - Falsificação de solicitação entre sites
 
@@ -155,7 +155,7 @@ tem o mesmo domínio que seu back-end
 faz chamadas de API que requerem autenticação para seu back-end
 então há uma maneira de usar cookies para autenticação com segurança.
 
-# EM DESENVOLVIMENTO E CONSTRUÇÃO.
+# EM DESENVOLVIMENTO E CONSTRUÇÃO..
 
 _Links e Referências:_
 
