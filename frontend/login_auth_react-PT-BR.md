@@ -156,7 +156,7 @@ tem o mesmo domínio que seu back-end
 faz chamadas de API que requerem autenticação para seu back-end
 então há uma maneira de usar cookies para autenticação com segurança.
 
-# EM DESENVOLVIMENTO E CONSTRUÇÃO....
+# EM DESENVOLVIMENTO E CONSTRUÇÃO...
 
 _Links e Referências:_
 
