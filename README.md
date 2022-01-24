@@ -1,5 +1,14 @@
 ## Articles and Tutorials
 
+- Útil para você, considere me pagar um café. Obrigado!
+- Useful for you, consider buying me a coffee. Thanks!
+
+ETH:
+0xdfaf8F1bCaaB513A14E5a0B8C2D0bF7EE6ECabbc 
+
+<a href="https://www.bitcoinqrcodemaker.com"><img src="https://www.bitcoinqrcodemaker.com/api/?style=ethereum&amp;address=0xdfaf8F1bCaaB513A14E5a0B8C2D0bF7EE6ECabbc" alt="Ethereum QR Code Generator" height="300" width="300" border="0" /></a>
+
+
 ## Artigos e Tutoriais
 
 List of articles and tutorials on engineering, architecture, software security.

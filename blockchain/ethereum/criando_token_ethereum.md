@@ -1,5 +1,13 @@
 # Criando um Token na Ethereum Blockchain
 
+- Útil para você, considere me pagar um café. Obrigado!
+- Useful for you, consider buying me a coffee. Thanks!
+
+ETH:
+0xdfaf8F1bCaaB513A14E5a0B8C2D0bF7EE6ECabbc 
+
+<a href="https://www.bitcoinqrcodemaker.com"><img src="https://www.bitcoinqrcodemaker.com/api/?style=ethereum&amp;address=0xdfaf8F1bCaaB513A14E5a0B8C2D0bF7EE6ECabbc" alt="Ethereum QR Code Generator" height="300" width="300" border="0" /></a>
+
  
 Neste tutorial,o objetivo é orientá-lo nas etapas de configuração da sua conta e emitir seu primeiro token na rede Ethereum usando um único contrato inteligente.
 O token será um ERC20 padrão, terá as principais funções e pode ser usado como base geral para aplicativos mais sofisticados do que apenas transferi-los.
