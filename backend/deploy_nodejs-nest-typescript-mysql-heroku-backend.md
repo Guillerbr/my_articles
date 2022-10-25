@@ -1,4 +1,4 @@
-# Deploy NodeJS-Nest Backend -Mysql Type Script Heroku ---
+# Deploy NodeJS-Nest Backend -Mysql Type Script Heroku --
 
 ## Construindo um deploy de uma aplicação Nodejs-Nest type-Script BackEnd e Mysql/Postgree SQL no Hereku Servidor
 
